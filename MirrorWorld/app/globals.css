@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cosmic-gold: #ffd700;
+  --cosmic-purple: #8b5cf6;
+  --cosmic-deep: #0f0f23;
+  --cosmic-dark: #1a1a2e;
+  --cosmic-light: #f1f5f9;
+  --mirror-silver: #c0c0c0;
+  --galaxy-blue: #4338ca;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: var(--cosmic-light);
+  background: var(--cosmic-deep);
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  cursor:
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23ffd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>')
+      12 12,
+    auto;
+}
+
+* {
+  cursor:
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23ffd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>')
+      12 12,
+    auto;
+}
+
+.cosmic-card {
+  background: rgba(15, 15, 35, 0.8);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--cosmic-gold);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(255, 215, 0, 0.2);
+}
+
+.cosmic-button {
+  background: linear-gradient(
+    135deg,
+    var(--cosmic-purple) 0%,
+    var(--cosmic-gold) 100%
+  );
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+}
+
+.cosmic-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(255, 215, 0, 0.5);
+  filter: brightness(1.1);
+}
+
+.cosmic-button-alt {
+  background: rgba(192, 192, 192, 0.2);
+  color: var(--cosmic-light);
+  border: 2px solid var(--mirror-silver);
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.cosmic-button-alt:hover {
+  background: rgba(192, 192, 192, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(192, 192, 192, 0.3);
+}
+
+.mirror-button {
+  background: linear-gradient(
+    135deg,
+    var(--mirror-silver) 0%,
+    var(--cosmic-light) 100%
+  );
+  color: var(--cosmic-deep);
+  border: none;
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(192, 192, 192, 0.3);
+}
+
+.mirror-button:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 30px rgba(192, 192, 192, 0.5);
+}
+
+.floating-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-15px) rotate(-5deg);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cosmic-glow {
+  animation: cosmic-glow 3s ease-in-out infinite;
+}
+
+@keyframes cosmic-glow {
+  0%,
+  100% {
+    text-shadow:
+      0 0 5px var(--cosmic-gold),
+      0 0 10px var(--cosmic-gold),
+      0 0 15px var(--cosmic-gold);
+  }
+  50% {
+    text-shadow:
+      0 0 10px var(--cosmic-purple),
+      0 0 20px var(--cosmic-purple),
+      0 0 30px var(--cosmic-purple);
+  }
+}
+
+/* Enhanced crescent moon cursor for interactive elements */
+button,
+a,
+[role="button"],
+.cursor-pointer {
+  cursor:
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="%23ffd700" stroke="%23ffd700" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>')
+      14 14,
+    pointer !important;
+}
