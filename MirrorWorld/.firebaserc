@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "echogpt-e448f"
-  }
+    "mirrorworld": "echogpt-e448f"
+  },
+  "targets": {},
+  "etags": {}
 }

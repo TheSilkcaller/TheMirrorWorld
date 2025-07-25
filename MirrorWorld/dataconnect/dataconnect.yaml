@@ -1,0 +1,12 @@
+specVersion: "v1"
+serviceId: "mirrorworld"
+location: "us-central1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "mirrorworld-fdc"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]

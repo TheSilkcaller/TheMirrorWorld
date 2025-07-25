@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
     "@tailwindcss/postcss": "^4.1.11",
     "next": "^14.0.0",
     "openai": "^5.10.2",

@@ -1,0 +1,46 @@
+type User @table {
+  displayName: String!
+  createdAt: Timestamp!
+  email: String
+  photoUrl: String
+}
+
+type Recording @table {
+  title: String!
+  recordedAt: Timestamp!
+  durationSeconds: Int!
+  audioUrl: String!
+  description: String
+  tags: [String]
+  user: User!
+}
+
+type Transcription @table {
+  text: String!
+  status: String! # e.g., PENDING, COMPLETE, FAILED
+  transcribedAt: Timestamp!
+  languageCode: String
+  recording: Recording!
+}
+
+type PromptTemplate @table {
+  name: String!
+  templateString: String!
+  createdAt: Timestamp!
+  description: String
+  isPublic: Boolean
+  user: User!
+}
+
+type AIOutput @table {
+  content: String!
+  outputType: String! # e.g., SUMMARY, MEETING_NOTES, DRAFT_EMAIL
+  generatedAt: Timestamp!
+  title: String
+  promptUsed: String
+  isPublic: Boolean
+  tags: [String]
+  transcription: Transcription!
+  user: User!
+  promptTemplate: PromptTemplate
+}
